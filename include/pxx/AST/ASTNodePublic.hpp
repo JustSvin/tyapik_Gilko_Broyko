@@ -1,0 +1,19 @@
+#pragma once
+
+class Leaf;
+class FormalParamsNode;
+class ActualParamsNode;
+class CallNode;
+class BinaryNode;
+class UnaryNode;
+class AssignmentNode;
+class BlockNode;
+class ProgramNode;
+class FunctionNode;
+class ElseNode;
+class IfNode;
+class WhileNode;
+class ForNode;
+class ProcedureNode;
+class VariableDeclarationNode;
+class ListDeclarationNode;

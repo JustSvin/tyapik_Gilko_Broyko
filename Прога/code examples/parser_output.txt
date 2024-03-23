@@ -1,0 +1,131 @@
+Program aboba
+   |Function declaration
+   |   |name:
+   |   |   |<ID, func>
+   |   |return type:
+   |   |   |<ID, integer>
+   |   |FormalParams
+   |   |   |names:
+   |   |   |   |<ID, a>
+   |   |   |   |<ID, b>
+   |   |   |types:
+   |   |   |   |<ID, integer>
+   |   |   |   |<ID, integer>
+   |   |Block
+   |   |   |If
+   |   |   |   |condition:
+   |   |   |   |   |BinaryOp (EQUAL)
+   |   |   |   |   |   |<ID, b>
+   |   |   |   |   |   |<NUMBER, 2>
+   |   |   |   |Block
+   |   |   |   |   |Assignment
+   |   |   |   |   |   |<ID, b>
+   |   |   |   |   |   |BinaryOp (STAR)
+   |   |   |   |   |   |   |<ID, a>
+   |   |   |   |   |   |   |<ID, a>
+   |   |   |   |Else
+   |   |   |   |   |Block
+   |   |   |   |   |   |Assignment
+   |   |   |   |   |   |   |<ID, b>
+   |   |   |   |   |   |   |<ID, a>
+   |Procedure declaration
+   |   |name:
+   |   |   |<ID, proc>
+   |   |FormalParams
+   |   |   |names:
+   |   |   |   |<ID, a>
+   |   |   |types:
+   |   |   |   |<ID, string>
+   |   |Block
+   |   |   |Variable Declaration
+   |   |   |   |name:
+   |   |   |   |   |i
+   |   |   |   |type:
+   |   |   |   |   |integer
+   |   |   |For
+   |   |   |   |iterator:
+   |   |   |   |   |<ID, i>
+   |   |   |   |from:
+   |   |   |   |   |<NUMBER, 1>
+   |   |   |   |to:
+   |   |   |   |   |<NUMBER, 10>
+   |   |   |   |Block
+   |   |   |   |   |Call
+   |   |   |   |   |   |callable:
+   |   |   |   |   |   |   |writeln
+   |   |   |   |   |   |params:
+   |   |   |   |   |   |   |ActualParams
+   |   |   |   |   |   |   |   |<ID, a>
+   |Block
+   |   |Variable Declaration
+   |   |   |name:
+   |   |   |   |a
+   |   |   |type:
+   |   |   |   |integer
+   |   |Variable Declaration
+   |   |   |name:
+   |   |   |   |b
+   |   |   |type:
+   |   |   |   |integer
+   |   |Assignment
+   |   |   |<ID, a>
+   |   |   |<NUMBER, 1>
+   |   |Assignment
+   |   |   |<ID, b>
+   |   |   |<NUMBER, 2>
+   |   |Variable Declaration
+   |   |   |name:
+   |   |   |   |c
+   |   |   |equals:
+   |   |   |   |BinaryOp (MINUS)
+   |   |   |   |   |BinaryOp (PLUS)
+   |   |   |   |   |   |BinaryOp (DIV)
+   |   |   |   |   |   |   |BinaryOp (STAR)
+   |   |   |   |   |   |   |   |BinaryOp (PLUS)
+   |   |   |   |   |   |   |   |   |<NUMBER, 1>
+   |   |   |   |   |   |   |   |   |<NUMBER, 2>
+   |   |   |   |   |   |   |   |<NUMBER, 3>
+   |   |   |   |   |   |   |BinaryOp (MINUS)
+   |   |   |   |   |   |   |   |<NUMBER, 4>
+   |   |   |   |   |   |   |   |<NUMBER, 5>
+   |   |   |   |   |   |<ID, a>
+   |   |   |   |   |<ID, b>
+   |   |List Declaration
+   |   |   |name:
+   |   |   |   |arr
+   |   |   |type:
+   |   |   |   |integer
+   |   |   |size:
+   |   |   |   |25
+   |   |Call
+   |   |   |callable:
+   |   |   |   |func
+   |   |   |params:
+   |   |   |   |ActualParams
+   |   |   |   |   |BinaryOp (PLUS)
+   |   |   |   |   |   |<ID, a>
+   |   |   |   |   |   |<ID, b>
+   |   |   |   |   |<ID, a>
+   |   |BinaryOp (DIV)
+   |   |   |BinaryOp (STAR)
+   |   |   |   |BinaryOp (PLUS)
+   |   |   |   |   |<NUMBER, 1>
+   |   |   |   |   |<NUMBER, 2>
+   |   |   |   |<NUMBER, 3>
+   |   |   |BinaryOp (MINUS)
+   |   |   |   |<NUMBER, 4>
+   |   |   |   |<NUMBER, 5>
+   |   |BinaryOp (PLUS)
+   |   |   |BinaryOp (MINUS)
+   |   |   |   |BinaryOp (PLUS)
+   |   |   |   |   |BinaryOp (MINUS)
+   |   |   |   |   |   |<NUMBER, 1>
+   |   |   |   |   |   |<NUMBER, 2>
+   |   |   |   |   |<NUMBER, 3>
+   |   |   |   |<NUMBER, 5>
+   |   |   |<NUMBER, 6>
+   |   |While
+   |   |   |condition:
+   |   |   |   |<ID, true>
+   |   |   |Block
+   |<EOF, >

@@ -1,0 +1,137 @@
+program:
+    | program_heading program_block EOF
+    | program_block EOF
+
+program_heading:
+    | PROGRAMKW ID SEMICOLON
+
+program_block:
+    | root_stmts block DOT 
+    | block DOT
+
+root_stmts:
+    | root_stmt SEMICOLON
+    | root_stmt SEMICOLON root_stmts
+
+root_stmt:
+    | variable_declaration
+    | list_declaration
+    | function_declaration
+    | procedure_declaration
+
+variable_declaration:
+    | VARKW ID ASSIGN expression
+    | VARKW ID type_part
+
+list_declaration:
+    | VARKW ID COLON ARRAY LSBR NUMBER DOT DOT NUMBER RSBR OF ID
+
+type_part:
+    | COLON ID
+
+function_declaration:
+    | FUNCTIONKW ID LPR formal_params RPR COLON ID block
+    | FUNCTIONKW ID LPR RPR COLON ID block
+
+procedure_declaration:
+    | PROCEDUREKW ID LPR formal_params RPR block
+    | PROCEDUREKW ID LPR RPR block
+
+formal_params:
+    | ID type_part SEMICOLON formal_params
+    | ID type_part
+
+block:
+    | BEGINKW statements ENDKW
+
+statements:
+    | statement SEMICOLON statements
+    | statement SEMICOLON
+
+statement:
+    | compound_stmt
+    | simple_stmt
+
+compound_stmt:
+    | if_stmt
+    | for_stmt
+    | while_stmt
+
+if_stmt:
+    | IFKW expression THENKW block else_block
+    | IFKW expression THENKW block
+else_block:
+    | ELSEKW block
+
+while_stmt:
+    | WHILEKW expression DO block
+
+for_stmt:
+    | FORKW ID ASSIGN NUMBER TO NUMBER DO block
+
+simple_stmt:
+    | variable_declaration
+    | list_declaration
+    | assignment
+    | expression
+
+assignment:
+    | ID ASSIGN expression
+
+expression:
+    | disjunction
+
+disjunction:
+    | conjunction OR disjunction
+    | conjunction
+
+conjunction:
+    | inversion AND conjunction
+    | inversion
+
+inversion:
+    | NOTKW inversion
+    | comparison
+
+comparison:
+    | sum GREATER comparison
+    | sum LESS comparison
+    | sum EQUAL comparison
+    | sum NOTEQ comparison
+    | sum GREQUAL comparison
+    | sum LEQUAL comparison
+    | sum
+
+sum:
+    | term PLUS sum
+    | term MINUS sum
+    | term
+
+term:
+    | factor STAR term
+    | factor DIV term
+    | factor MOD term
+    | factor
+
+factor:
+    | PLUS factor
+    | MINUS factor
+    | primary
+
+primary:
+    | LPR expression RPR
+    | atom
+    | atom func_call
+
+func_call:
+    | LPR actual_params RPR
+    | LPR RPR
+
+atom:
+    | ID
+    | STRING
+    | NUMBER
+
+actual_params:
+    | expression COMMA actual_params
+    | expression
